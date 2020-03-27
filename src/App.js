@@ -1,12 +1,14 @@
 import React from 'react';
+import Counter from './app/Counter/Counter';
+import { store } from './store';
+import Buttons from './app/Buttons';
 
-function App() {
+function App(props) {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1>Silver's App</h1>
-      </header>
-    </div>
+    <React.Fragment>
+      <Counter count={store.getState().count} />
+      <Buttons counts={[10, 25, 100]} />
+    </React.Fragment>
   );
 }
 
